@@ -14,6 +14,7 @@ require('nv-treesitter')
 require('nv-gitsigns')
 require('nv-autopairs')
 require('nv-neogit')
+require('nv-presence')
 
 -- LSP
 require('lsp.lua-ls')
