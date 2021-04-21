@@ -63,4 +63,5 @@ return require('packer').startup(function(use)
   use 'unblevable/quick-scope'
   use 'airblade/vim-rooter'
   use 'windwp/nvim-autopairs'
+  use {'srishanbhattarai/neovim-spotify', run = 'bash install.sh'}
 end)
