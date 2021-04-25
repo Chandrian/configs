@@ -5,7 +5,6 @@ require('settings')
 
 -- Plugins
 require('nv-compe')
-require('nv-colorizer')
 require('nv-galaxyline')
 require('nv-tree')
 require('nv-galaxyline')
