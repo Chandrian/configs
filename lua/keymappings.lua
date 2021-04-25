@@ -23,3 +23,10 @@ map('v', '>', '>gv')
 map('i', 'kk', '<ESC>') -- escape remap
 map('n', '<TAB>', ':bnext<CR>') -- TAB switch buffer
 map('n', '<S-TAB>', ':bprevious<CR>')
+-- Hope to replace with map() instead
+vim.cmd 'nmap <C-a> <Plug>(dial-increment)'
+vim.cmd 'nmap <C-x> <Plug>(dial-decrement)'
+vim.cmd 'vmap <C-a> <Plug>(dial-increment)'
+vim.cmd 'vmap <C-x> <Plug>(dial-decrement)'
+vim.cmd 'vmap g<C-a> <Plug>(dial-increment-additional)'
+vim.cmd 'vmap <C-x> <Plug>(dial-decrement-additional)'

@@ -69,12 +69,5 @@ return require('packer').startup(function(use)
   use 'windwp/nvim-autopairs'
   use {'srishanbhattarai/neovim-spotify', run = 'bash install.sh'}
   use {'andweeb/presence.nvim'}
-  use {
-  'zegervdv/nrpattern.nvim',
-  config = function()
-    -- Basic setup
-    -- See below for more options
-    require"nrpattern".setup()
-  end,
-   }
+  use {'monaqa/dial.nvim'}
 end)
