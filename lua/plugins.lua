@@ -56,7 +56,11 @@ return require('packer').startup(function(use)
 
   -- Color
   use 'christianchiarulli/nvcode-color-schemes.vim'
-  use 'norcalli/nvim-colorizer.lua'
+  use {'norcalli/nvim-colorizer.lua',
+    config = function()
+        require"colorizer".setup()
+    end,
+    }
 
   -- General Plugins
   use 'kevinhwang91/nvim-bqf'
@@ -65,4 +69,12 @@ return require('packer').startup(function(use)
   use 'windwp/nvim-autopairs'
   use {'srishanbhattarai/neovim-spotify', run = 'bash install.sh'}
   use {'andweeb/presence.nvim'}
+  use {
+  'zegervdv/nrpattern.nvim',
+  config = function()
+    -- Basic setup
+    -- See below for more options
+    require"nrpattern".setup()
+  end,
+   }
 end)
