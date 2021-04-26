@@ -4,7 +4,7 @@
 -- require('commands')
 
 require('plugins')
-
+-- To be removed
 require('lv-globals')
 require('lv-utils')
 vim.cmd('luafile ~/.config/nvim/lv-settings.lua')
