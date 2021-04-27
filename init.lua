@@ -2,6 +2,7 @@
 -- require('settings')
 -- require('autocmds')
 -- require('commands')
+-- this is a comments
 
 require('plugins')
 -- To be removed
