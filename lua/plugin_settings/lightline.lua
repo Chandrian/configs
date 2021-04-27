@@ -1,6 +1,6 @@
 vim.o.showmode = false
 vim.g.lightline = {
-    colorscheme = 'gruvbox',
+    colorscheme = 'lunar',
     active = {
         left = {
             {'mode', 'paste'},

@@ -1,5 +1,4 @@
 O = {
-    auto_close_tree = 0,
     auto_complete = true,
     colorscheme = 'lunar',
     hidden_files = true,
@@ -7,15 +6,6 @@ O = {
     number = true,
     relative_number = true,
     shell = 'bash',
-
-    -- @usage pass a table with your desired languages
-    treesitter = {
-        ensure_installed = "all",
-        ignore_install = {"haskell"},
-        highlight = {enabled = true},
-        playground = {enabled = true},
-        rainbow = {enabled = false}
-    },
 
     database = {save_location = '~/.config/nvcode_db', auto_execute = 1},
     python = {

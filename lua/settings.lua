@@ -63,8 +63,8 @@ set_options({
     {'inccommand', 'split'},
     {'ts', 4},
     {'sw', 4},
+    {'clipboard', 'unnamedplus'}, -- Copy paste between vim and everything elsewhere
 })
-
 TERMINAL = vim.fn.expand('$TERMINAL')
 vim.cmd('let &titleold="'..TERMINAL..'"')
 vim.o.titlestring="%<%F%=%l/%L - nvim"
