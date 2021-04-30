@@ -5,10 +5,10 @@
 -- this is a comments
 
 require('plugins')
+-- require('plugin_settings.tree')
 -- To be removed
 require('lv-globals')
 require('lv-utils')
--- vim.cmd('luafile ~/.config/nvim/lv-settings.lua')
 require('lv-autocommands')
 require('settings')
 require('keymappings')
@@ -16,16 +16,16 @@ require('colorscheme')
 require('lv-galaxyline')
 require('lv-comment')
 require('lv-compe')
-require('lv-barbar')
+-- require('lv-barbar')
 require('lv-dashboard')
 require('lv-telescope')
 require('lv-gitsigns')
-require('lv-nvimtree')
+-- require('lv-nvimtree')
 require('lv-treesitter')
 require('lv-autopairs')
 
 -- Which Key (Hope to replace with Lua plugin someday)
-vim.cmd('source ~/.config/nvim/vimscript/lv-whichkey/init.vim')
+-- vim.cmd('source ~/.config/nvim/vimscript/lv-whichkey/init.vim')
 vim.cmd('source ~/.config/nvim/vimscript/functions.vim')
 
 -- LSP
@@ -52,6 +52,4 @@ require('lsp.efm-general-ls')
 require('lsp.latex-ls')
 require('lsp.svelte-ls')
 require('lsp.tailwindcss-ls')
-require('lsp.ruby-ls')
-require('lsp.kotlin-ls')
 

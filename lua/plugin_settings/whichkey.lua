@@ -6,3 +6,5 @@ vim.g.which_key_display_names = {
 }
 vim.g.which_key_sep = '→'
 vim.g.which_key_timeout = 100
+vim.g.which_key_map =  {}
+vim.g.which_key_use_floating_win = 0

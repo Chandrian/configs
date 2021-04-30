@@ -58,11 +58,15 @@ return require("packer").startup(
         use {"windwp/nvim-ts-autotag", opt = true}
 
         -- Explorer
-        use "kyazdani42/nvim-tree.lua"
+    use { -- tree (view files)
+        'kyazdani42/nvim-tree.lua',
+        requires = {'kyazdani42/nvim-web-devicons'}, -- for file icons
+        config = 'require("plugin_settings.tree")',
+    }
+        -- use "kyazdani42/nvim-tree.lua"
 
         -- use {'lukas-reineke/indent-blankline.nvim', opt=true, branch = 'lua'}
         use {"lewis6991/gitsigns.nvim", opt = true}
-        use {"liuchengxu/vim-which-key", opt = true}
         use {"ChristianChiarulli/dashboard-nvim", opt = true}
         use {"windwp/nvim-autopairs", opt = true}
         use {"terrortylor/nvim-comment", opt = true}
@@ -72,12 +76,17 @@ return require("packer").startup(
         use {"christianchiarulli/nvcode-color-schemes.vim", opt = true}
 
         -- Icons
-        use {"kyazdani42/nvim-web-devicons", opt = true}
+        -- use {"kyazdani42/nvim-web-devicons", opt = true}
 
         -- Status Line and Bufferline
         use {"glepnir/galaxyline.nvim", opt = true}
-        use {"romgrk/barbar.nvim", opt = true}
+        use {"romgrk/barbar.nvim",
+        requires = {'kyazdani42/nvim-web-devicons'}}
 
+ use {
+    'AckslD/nvim-whichkey-setup.lua',
+    requires = {'liuchengxu/vim-which-key', config = 'require("plugin_settings.whichkey")'},
+}
         require_plugin("nvim-lspconfig")
         require_plugin("lspsaga.nvim")
         require_plugin("nvim-lspinstall")
@@ -89,15 +98,14 @@ return require("packer").startup(
         require_plugin("vim-vsnip")
         require_plugin("nvim-treesitter")
         require_plugin("nvim-ts-autotag")
-        require_plugin("nvim-tree.lua")
+        -- require_plugin("nvim-tree.lua")
         require_plugin("gitsigns.nvim")
-        require_plugin("vim-which-key")
         require_plugin("dashboard-nvim")
         require_plugin("nvim-autopairs")
         require_plugin("nvim-comment")
         require_plugin("nvim-bqf")
         require_plugin("nvcode-color-schemes.vim")
-        require_plugin("nvim-web-devicons")
+        -- require_plugin("nvim-web-devicons")
         require_plugin("galaxyline.nvim")
         require_plugin("barbar.nvim")
     end
