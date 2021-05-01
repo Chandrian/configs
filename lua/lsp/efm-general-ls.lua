@@ -15,15 +15,11 @@ local isort = {formatCommand = "isort --quiet -", formatStdin = true}
 local yapf = {formatCommand = "yapf --quiet", formatStdin = true}
 local black = {formatCommand = "black --quiet -", formatStdin = true}
 
-if O.python.linter == 'flake8' then table.insert(python_arguments, flake8) end
+table.insert(python_arguments, flake8)
 
-if O.python.isort then table.insert(python_arguments, isort) end
-
-if O.python.formatter == 'yapf' then
-    table.insert(python_arguments, yapf)
-elseif O.python.formatter == 'black' then
-    table.insert(python_arguments, black)
-end
+table.insert(python_arguments, isort)
+-- @usage can be 'yapf', 'black'
+table.insert(python_arguments, black)
 
 -- lua
 local lua_arguments = {}
@@ -37,12 +33,8 @@ local lua_fmt = {
     formatCommand = "luafmt --indent-count 2 --line-width 120 --stdin",
     formatStdin = true
 }
-
-if O.lua.formatter == 'lua-format' then
-  table.insert(lua_arguments, luaFormat)
-elseif O.lua.formatter == 'lua-fmt' then
+-- @usage can be 'lua-format'
   table.insert(lua_arguments, lua_fmt)
-end
 
 -- sh
 local sh_arguments = {}
@@ -54,9 +46,9 @@ local shellcheck = {
     lintFormats = {'%f:%l:%c: %trror: %m', '%f:%l:%c: %tarning: %m', '%f:%l:%c: %tote: %m'}
 }
 
-if O.sh.formatter == 'shfmt' then table.insert(sh_arguments, shfmt) end
+table.insert(sh_arguments, shfmt)
 
-if O.sh.linter == 'shellcheck' then table.insert(sh_arguments, shellcheck) end
+table.insert(sh_arguments, shellcheck)
 
 -- tsserver/web javascript react, vue, json, html, css, yaml
 local prettier = {formatCommand = "prettier --stdin-filepath ${INPUT}", formatStdin = true}
@@ -74,9 +66,9 @@ local eslint = {
 
 local tsserver_args = {}
 
-if O.tsserver.formatter == 'prettier' then table.insert(tsserver_args, prettier) end
+table.insert(tsserver_args, prettier)
 
-if O.tsserver.linter == 'eslint' then table.insert(tsserver_args, eslint) end
+table.insert(tsserver_args, eslint)
 
 -- local markdownlint = {
 --     -- TODO default to global lintrc

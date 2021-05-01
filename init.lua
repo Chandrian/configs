@@ -2,12 +2,11 @@
 -- require('settings')
 -- require('autocmds')
 -- require('commands')
--- this is a comments
 
 require('plugins')
 -- require('plugin_settings.tree')
 -- To be removed
-require('lv-globals')
+-- require('lv-globals')
 require('lv-utils')
 require('lv-autocommands')
 require('settings')

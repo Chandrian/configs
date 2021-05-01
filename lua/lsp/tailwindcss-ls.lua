@@ -1,3 +1,4 @@
+DATA_PATH = vim.fn.stdpath('data')
 local lspconfig = require 'lspconfig'
 local configs = require 'lspconfig/configs'
 
@@ -9,7 +10,7 @@ lspconfig.tailwindls.setup {
         "node", DATA_PATH .. "/lspinstall/tailwindcss/tailwindcss-intellisense/extension/dist/server/index.js",
         "--stdio"
     },
-    filetypes = O.tailwindls.filetypes,
+    filetypes = {'html', 'css', 'scss', 'javascript', 'javascriptreact', 'typescript', 'typescriptreact'},
     root_dir = require('lspconfig/util').root_pattern("package.json", "tsconfig.json", "jsconfig.json", ".git"),
     handlers = {
         ["tailwindcss/getConfiguration"] = function(_, _, params, _, bufnr, _)
