@@ -1,31 +1,20 @@
--- require('keys')
--- require('settings')
--- require('autocmds')
--- require('commands')
-
-require('plugins')
--- require('plugin_settings.tree')
--- To be removed
--- require('lv-globals')
-require('lv-utils')
-require('lv-autocommands')
+require('keys')
 require('settings')
+require('autocmds')
+require('commands')
+require('plugins')
+
+require('lv-autocommands')
 require('keymappings')
 require('colorscheme')
 require('lv-galaxyline')
 require('lv-comment')
 require('lv-compe')
--- require('lv-barbar')
 require('lv-dashboard')
 require('lv-telescope')
 require('lv-gitsigns')
--- require('lv-nvimtree')
 require('lv-treesitter')
 require('lv-autopairs')
-
--- Which Key (Hope to replace with Lua plugin someday)
--- vim.cmd('source ~/.config/nvim/vimscript/lv-whichkey/init.vim')
-vim.cmd('source ~/.config/nvim/vimscript/functions.vim')
 
 -- LSP
 require('lsp')

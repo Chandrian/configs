@@ -4,7 +4,7 @@ local function set_keymap(mode, opts, keymaps)
     end
 end
 
--- normal {{{1
+-- normal 
 set_keymap('n', {noremap=true, silent=true}, {
     -- remap leader keys to noop
     {' ', ''},
@@ -16,10 +16,6 @@ set_keymap('n', {noremap=true, silent=true}, {
     -- source config
     {'<C-s>', ':lua require("funcs.source").config()<CR>'},
 
-    -- Jump list
-    {'[j', '<C-o>'},
-    {']j', '<C-i>'},
-
     -- Smart way to move between windows
     {'<C-h>', '<C-w>h'},
     {'<C-j>', '<C-w>j'},
@@ -30,10 +26,6 @@ set_keymap('n', {noremap=true, silent=true}, {
     {'[d', '<PageUp>'},
     {']d', '<PageDown>'},
 
-    -- Smart way to move between tabs
-    {'<A-h>', 'gT'},
-    {'<A-l>', 'gt'},
-
     -- Resize split
     {'<Up>', ':resize +2<CR>'},
     {'<Down>', ':resize -2<CR>'},
@@ -41,11 +33,11 @@ set_keymap('n', {noremap=true, silent=true}, {
     {'<Right>', ':vertical resize -2<CR>'},
 
     -- Navigate buffers
-    -- {'<Tab>', ':bnext<CR>'},
-    -- {'<S-Tab>', ':bprevious<CR>'},
+    {'<Tab>', ':bnext<CR>'},
+    {'<S-Tab>', ':bprevious<CR>'},
 })
 
--- visual {{{1
+-- visual 
 set_keymap('x', {noremap=true, silent=true}, {
     -- Allow pasting same thing many times
     {'p', '""p:let @"=@0<CR>'},
@@ -63,7 +55,7 @@ set_keymap('x', {noremap=true, silent=true}, {
     {'J', ':move \'>+1<CR>gv-gv'},
 })
 
--- insert {{{1
+-- insert 
 set_keymap('i', {noremap=true, silent=true}, {
     -- Smart way to move between tabs
     {'<A-h>', [[<C-\><C-n>gT]]},
@@ -80,7 +72,7 @@ set_keymap('i', {noremap=true, silent=true}, {
     {'<Up>', '<Esc>gka'},
 })
 
--- terminal {{{1
+-- terminal 
 set_keymap('t', {noremap=true, silent=true}, {
     -- quickfix from buffer
     {'<C-q>', [[<C-\><C-n>:lua require("funcs.quicklist").create_from_buffer()<CR>]]},
@@ -100,7 +92,7 @@ set_keymap('t', {noremap=true, silent=true}, {
     {'<A-l>', [[<C-\><C-N>gt]]},
 })
 
--- leader {{{1
+-- leader 
 local status, wk = pcall(require, "whichkey_setup")
 if not (status) then
    return
@@ -109,7 +101,7 @@ end
 vim.g.mapleader = ' '
 vim.g.maplocalleader = '\\'
 
--- normal {{{1
+-- normal 
 local which_key_map = {}
 -- general
 which_key_map['w'] = {'<Cmd>w<CR>', 'save file'}
@@ -193,12 +185,12 @@ which_key_map.u = {
 -- input/language
 which_key_map.i = {
     name = '+input/language',
-    s = {'<Cmd>lua require("funcs.language").toggle_swedish()<CR>', 'toggle sv'},
+    s = {'<Cmd>lua require("funcs.language").toggle_sfrench()<CR>', 'toggle fr'},
 }
 
 wk.register_keymap('leader', which_key_map)
 
--- visual {{{1
+-- visual
 local which_key_visual_map = {}
 -- search
 which_key_visual_map.s = {

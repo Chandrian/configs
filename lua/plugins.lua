@@ -63,7 +63,6 @@ return require("packer").startup(
         requires = {'kyazdani42/nvim-web-devicons'}, -- for file icons
         config = 'require("plugin_settings.tree")',
     }
-        -- use "kyazdani42/nvim-tree.lua"
 
         -- use {'lukas-reineke/indent-blankline.nvim', opt=true, branch = 'lua'}
         use {"lewis6991/gitsigns.nvim", opt = true}
@@ -98,7 +97,6 @@ return require("packer").startup(
         require_plugin("vim-vsnip")
         require_plugin("nvim-treesitter")
         require_plugin("nvim-ts-autotag")
-        -- require_plugin("nvim-tree.lua")
         require_plugin("gitsigns.nvim")
         require_plugin("dashboard-nvim")
         require_plugin("nvim-autopairs")

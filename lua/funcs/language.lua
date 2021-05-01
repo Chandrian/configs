@@ -13,7 +13,7 @@ local function iunmap(keymap)
     end
 end
 
-local swedish_keymap = {
+local french_keymap = {
     [';'] =  '<C-k>o:',
     ['\''] = '<C-k>a:',
     ['['] =  '<C-k>aa',
@@ -24,24 +24,26 @@ local swedish_keymap = {
 
 local language
 
-M.enable_swedish = function()
-    language = "sv"
-    vim.o.spelllang = "sv"
-    inoremap(swedish_keymap)
+M.enable_french = function()
+    language = "fr_FR"
+    vim.o.spelllang = "fr_FR"
+    inoremap(french_keymap)
 end
 
-M.disable_swedish = function()
+M.disable_french = function()
     language = "en"
     vim.o.spelllang = "en"
-    iunmap(swedish_keymap)
+    iunmap(french_keymap)
 end
 
-M.toggle_swedish = function()
-    if language == "sv" then
-        M.disable_swedish()
+M.toggle_french = function()
+    if language == "fr_FR" then
+        M.disable_french()
     else
-        M.enable_swedish()
+        M.enable_french()
     end
 end
-
+-- fr_FR.UTF-8
+-- en_US
+-- ru_RU
 return M
