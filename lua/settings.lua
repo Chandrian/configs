@@ -35,7 +35,6 @@ enable_options({
     'title',
     'splitbelow',
     'splitright',
-    'termguicolors',
     'smartindent',
     'cursorline',
     'noshowmode',

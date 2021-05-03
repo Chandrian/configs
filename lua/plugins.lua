@@ -74,18 +74,17 @@ return require("packer").startup(
         -- Color
         use {"christianchiarulli/nvcode-color-schemes.vim", opt = true}
 
-        -- Icons
-        -- use {"kyazdani42/nvim-web-devicons", opt = true}
-
         -- Status Line and Bufferline
         use {"glepnir/galaxyline.nvim", opt = true}
-        use {"romgrk/barbar.nvim",
-        requires = {'kyazdani42/nvim-web-devicons'}}
+        use {'akinsho/nvim-bufferline.lua', requires = 'kyazdani42/nvim-web-devicons', config = 'require("plugin_settings.bufferline")'}
 
  use {
     'AckslD/nvim-whichkey-setup.lua',
-    requires = {'liuchengxu/vim-which-key', config = 'require("plugin_settings.whichkey")'},
-}
+        requires = {{
+            'liuchengxu/vim-which-key',
+            config = 'require("plugin_settings.whichkey")',
+        }}
+    }
         require_plugin("nvim-lspconfig")
         require_plugin("lspsaga.nvim")
         require_plugin("nvim-lspinstall")
@@ -105,6 +104,5 @@ return require("packer").startup(
         require_plugin("nvcode-color-schemes.vim")
         -- require_plugin("nvim-web-devicons")
         require_plugin("galaxyline.nvim")
-        require_plugin("barbar.nvim")
     end
 )

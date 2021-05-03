@@ -4,7 +4,7 @@ local function set_keymap(mode, opts, keymaps)
     end
 end
 
--- normal 
+-- normal
 set_keymap('n', {noremap=true, silent=true}, {
     -- remap leader keys to noop
     {' ', ''},
@@ -31,13 +31,9 @@ set_keymap('n', {noremap=true, silent=true}, {
     {'<Down>', ':resize -2<CR>'},
     {'<Left>', ':vertical resize +2<CR>'},
     {'<Right>', ':vertical resize -2<CR>'},
-
-    -- Navigate buffers
-    {'<Tab>', ':bnext<CR>'},
-    {'<S-Tab>', ':bprevious<CR>'},
 })
 
--- visual 
+-- visual
 set_keymap('x', {noremap=true, silent=true}, {
     -- Allow pasting same thing many times
     {'p', '""p:let @"=@0<CR>'},
@@ -55,7 +51,7 @@ set_keymap('x', {noremap=true, silent=true}, {
     {'J', ':move \'>+1<CR>gv-gv'},
 })
 
--- insert 
+-- insert
 set_keymap('i', {noremap=true, silent=true}, {
     -- Smart way to move between tabs
     {'<A-h>', [[<C-\><C-n>gT]]},
@@ -72,7 +68,7 @@ set_keymap('i', {noremap=true, silent=true}, {
     {'<Up>', '<Esc>gka'},
 })
 
--- terminal 
+-- terminal
 set_keymap('t', {noremap=true, silent=true}, {
     -- quickfix from buffer
     {'<C-q>', [[<C-\><C-n>:lua require("funcs.quicklist").create_from_buffer()<CR>]]},
@@ -92,16 +88,13 @@ set_keymap('t', {noremap=true, silent=true}, {
     {'<A-l>', [[<C-\><C-N>gt]]},
 })
 
--- leader 
-local status, wk = pcall(require, "whichkey_setup")
-if not (status) then
-   return
-end
+-- leader
+local wk = require("whichkey_setup")
 
 vim.g.mapleader = ' '
 vim.g.maplocalleader = '\\'
 
--- normal 
+-- normal
 local which_key_map = {}
 -- general
 which_key_map['w'] = {'<Cmd>w<CR>', 'save file'}
@@ -110,23 +103,6 @@ which_key_map['Q'] = {'<Cmd>wqa<CR>', 'save quit all'}
 which_key_map['S'] = {'<Cmd>wa<CR><Cmd>mksession!<CR><Cmd>qa<CR>', 'save session quit all'}
 which_key_map['<CR>'] = {'<Cmd>noh<CR><Plug>SearchantStop<CR>', 'no search hl'}
 which_key_map['*'] = {'*<Cmd>lua require("funcs.search").vim("*."..vim.fn.expand("%:e"))<CR>', 'vimgrep cursor'}
-
--- buffers
-which_key_map.b = {
-    name = '+buffer',
-    d = {':Bclose<CR>:tabclose<CR>gT', 'close'},
-    a = {':bufdo bd<CR>', 'do'},
-}
-
--- tabs
-which_key_map.t = {
-    name = '+tabs',
-    n = {':tabnew<CR>', 'new'},
-    o = {':tabonly<CR>', 'close others'},
-    c = {':tabclose<CR>', 'close'},
-    m = {':tabmove ', 'move'},
-    e = {':tabedit <C-r>=expand("%:p:h")<CR>/', 'edit cwd'},
-}
 
 -- quickfix
 which_key_map.q = {
