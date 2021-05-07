@@ -75,7 +75,7 @@ return require("packer").startup(
         use {"christianchiarulli/nvcode-color-schemes.vim", opt = true}
 
         -- Status Line and Bufferline
-        use {"glepnir/galaxyline.nvim", opt = true}
+        use {"glepnir/galaxyline.nvim", config = 'require("plugin_settings.galaxyline")'}
         use {'akinsho/nvim-bufferline.lua', requires = 'kyazdani42/nvim-web-devicons', config = 'require("plugin_settings.bufferline")'}
 
  use {
@@ -102,7 +102,5 @@ return require("packer").startup(
         require_plugin("nvim-comment")
         require_plugin("nvim-bqf")
         require_plugin("nvcode-color-schemes.vim")
-        -- require_plugin("nvim-web-devicons")
-        require_plugin("galaxyline.nvim")
     end
 )
