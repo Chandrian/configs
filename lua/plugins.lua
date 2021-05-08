@@ -68,7 +68,7 @@ return require("packer").startup(
         use {"lewis6991/gitsigns.nvim", opt = true}
         use {"ChristianChiarulli/dashboard-nvim", opt = true}
         use {"windwp/nvim-autopairs", opt = true}
-        use {"terrortylor/nvim-comment", opt = true}
+        use {"terrortylor/nvim-comment", config = 'require("plugin_settings.comment")'}
         use {"kevinhwang91/nvim-bqf", opt = true}
 
         -- Color
@@ -99,7 +99,6 @@ return require("packer").startup(
         require_plugin("gitsigns.nvim")
         require_plugin("dashboard-nvim")
         require_plugin("nvim-autopairs")
-        require_plugin("nvim-comment")
         require_plugin("nvim-bqf")
         require_plugin("nvcode-color-schemes.vim")
     end
