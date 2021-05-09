@@ -9,8 +9,6 @@ require('keymappings')
 require('colorscheme')
 require('lv-dashboard')
 require('lv-telescope')
-require('lv-gitsigns')
-require('lv-autopairs')
 
 -- LSP
 require('lsp')

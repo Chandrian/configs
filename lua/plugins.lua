@@ -34,6 +34,8 @@ return require("packer").startup(
     function(use)
         -- Packer can manage itself as an optional plugin
         use "wbthomason/packer.nvim"
+    -- brackets maps
+    use 'tpope/vim-unimpaired'
 
         -- TODO refactor all of this (for now it works, but yes I know it could be wrapped in a simpler function)
         use {"neovim/nvim-lspconfig", opt = true}
@@ -69,10 +71,30 @@ return require("packer").startup(
         config = 'require("plugin_settings.tree")',
     }
 
+    use {
+        { -- git merge conflicts
+            'tpope/vim-fugitive',
+            config = 'require("plugin_settings.fugitive")',
+            requires = {'tpope/vim-rhubarb'},
+        },
+        {
+            'lewis6991/gitsigns.nvim',
+            requires = {'nvim-lua/plenary.nvim'},
+            config = 'require("plugin_settings.gitsigns")',
+        },
+        {
+            'f-person/git-blame.nvim',
+            config = 'require("plugin_settings.gitblame")',
+        },
+        {
+            'ruifm/gitlinker.nvim',
+            requires = 'nvim-lua/plenary.nvim',
+            config = 'require("plugin_settings.gitlinker")',
+        },
+    }
         -- use {'lukas-reineke/indent-blankline.nvim', opt=true, branch = 'lua'}
-        use {"lewis6991/gitsigns.nvim", opt = true}
         use {"ChristianChiarulli/dashboard-nvim", opt = true}
-        use {"windwp/nvim-autopairs", opt = true}
+        use {"windwp/nvim-autopairs", config = 'require("plugin_settings.autopairs")'}
 
         use "terrortylor/nvim-comment"
         require('nvim_comment').setup()
@@ -102,9 +124,7 @@ return require("packer").startup(
         require_plugin("nvim-dap")
         require_plugin("vim-vsnip")
         require_plugin("nvim-ts-autotag")
-        require_plugin("gitsigns.nvim")
         require_plugin("dashboard-nvim")
-        require_plugin("nvim-autopairs")
         require_plugin("nvim-bqf")
         require_plugin("nvcode-color-schemes.vim")
     end
