@@ -49,12 +49,17 @@ return require("packer").startup(
         use {"mfussenegger/nvim-dap", opt = true}
 
         -- Autocomplete
-        use {"hrsh7th/nvim-compe", opt = true}
+        use {"hrsh7th/nvim-compe", config = 'require("plugin_settings.compe")'}
         use {"hrsh7th/vim-vsnip", opt = true}
         use {"rafamadriz/friendly-snippets", opt = true}
 
         -- Treesitter
-        use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        run = ":TSUpdate",
+        config = 'require("plugin_settings.treesitter")',
+    }
+    use 'nvim-treesitter/nvim-treesitter-textobjects'
         use {"windwp/nvim-ts-autotag", opt = true}
 
         -- Explorer
@@ -68,7 +73,10 @@ return require("packer").startup(
         use {"lewis6991/gitsigns.nvim", opt = true}
         use {"ChristianChiarulli/dashboard-nvim", opt = true}
         use {"windwp/nvim-autopairs", opt = true}
-        use {"terrortylor/nvim-comment", config = 'require("plugin_settings.comment")'}
+
+        use "terrortylor/nvim-comment"
+        require('nvim_comment').setup()
+
         use {"kevinhwang91/nvim-bqf", opt = true}
 
         -- Color
@@ -92,9 +100,7 @@ return require("packer").startup(
         require_plugin("plenary.nvim")
         require_plugin("telescope.nvim")
         require_plugin("nvim-dap")
-        require_plugin("nvim-compe")
         require_plugin("vim-vsnip")
-        require_plugin("nvim-treesitter")
         require_plugin("nvim-ts-autotag")
         require_plugin("gitsigns.nvim")
         require_plugin("dashboard-nvim")

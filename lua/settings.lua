@@ -20,7 +20,7 @@ vim.cmd('filetype plugin on')
 vim.cmd('syntax enable')
 
 enable_options({
-    'spell',
+    -- 'spell',
     'expandtab',
     'termguicolors',
     'wildmenu', -- tabcomplete

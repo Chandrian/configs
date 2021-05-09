@@ -7,11 +7,9 @@ require('plugins')
 require('lv-autocommands')
 require('keymappings')
 require('colorscheme')
-require('lv-compe')
 require('lv-dashboard')
 require('lv-telescope')
 require('lv-gitsigns')
-require('lv-treesitter')
 require('lv-autopairs')
 
 -- LSP

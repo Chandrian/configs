@@ -1,12 +1,24 @@
 -- disable brackets to use rainbow instead
-require"nvim-treesitter.highlight"
+-- require"nvim-treesitter.highlight"
 -- local hlmap = vim.treesitter.highlighter.hl_map
 -- hlmap["punctuation.bracket"] = nil
 
 require'nvim-treesitter.configs'.setup {
+    ignore_install = {"haskell", "vue"},
+    -- indent = {enable = true, disable = {"python", "html", "javascript"}},
+    indent = {enable = true},
+    autotag = {enable = true},
     ensure_installed = "maintained",
     highlight = {enable = true, additional_vim_regex_highlighting = true},
-    -- indentation = {enable = true},
+    incremental_selection = {
+    enable = true,
+    keymaps = {
+      init_selection = "gnn",
+      node_incremental = "grn",
+      scope_incremental = "grc",
+      node_decremental = "grm",
+    },
+  },
     folding = {enable = true},
     rainbow = {enable = true},
     tsawesome = {enable = true},
@@ -54,13 +66,13 @@ require'nvim-treesitter.configs'.setup {
                 ["[]"] = "@class.outer",
             },
         },
-        -- lsp_interop = {
-        --     enable = true,
-        --     peek_definition_code = {
-        --         ["gp"] = "@function.outer",
-        --         ["gP"] = "@class.outer",
-        --     },
-        -- },
+        lsp_interop = {
+      enable = true,
+      peek_definition_code = {
+        ["df"] = "@function.outer",
+        ["dF"] = "@class.outer",
+      },
+    },
     },
 }
 
