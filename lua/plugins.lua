@@ -92,7 +92,9 @@ return require("packer").startup(
             config = 'require("plugin_settings.gitlinker")',
         },
     }
-        -- use {'lukas-reineke/indent-blankline.nvim', opt=true, branch = 'lua'}
+    use {'lukas-reineke/indent-blankline.nvim',
+            branch = 'lua'
+        }
         use {"ChristianChiarulli/dashboard-nvim", opt = true}
         use {"windwp/nvim-autopairs", config = 'require("plugin_settings.autopairs")'}
 
