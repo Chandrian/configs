@@ -8,7 +8,6 @@ require('lv-autocommands')
 require('keymappings')
 require('colorscheme')
 require('lv-dashboard')
-require('lv-telescope')
 
 -- LSP
 require('lsp')

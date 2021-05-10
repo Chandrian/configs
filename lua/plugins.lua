@@ -43,9 +43,16 @@ return require("packer").startup(
         use {"kabouzeid/nvim-lspinstall", opt = true}
 
         -- Telescope
-        use {"nvim-lua/popup.nvim", opt = true}
-        use {"nvim-lua/plenary.nvim", opt = true}
-        use {"nvim-telescope/telescope.nvim", opt = true}
+        use {"nvim-lua/popup.nvim"}
+    use { -- for testing
+        'nvim-lua/plenary.nvim',
+        config = 'require("plugin_settings.plenary")',
+    }
+    use { -- telescope
+        'nvim-telescope/telescope.nvim',
+        requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}},
+        config = 'require("plugin_settings.telescope")',
+    }
 
         -- Debugging
         use {"mfussenegger/nvim-dap", opt = true}
@@ -120,9 +127,6 @@ return require("packer").startup(
         require_plugin("nvim-lspconfig")
         require_plugin("lspsaga.nvim")
         require_plugin("nvim-lspinstall")
-        require_plugin("popup.nvim")
-        require_plugin("plenary.nvim")
-        require_plugin("telescope.nvim")
         require_plugin("nvim-dap")
         require_plugin("vim-vsnip")
         require_plugin("nvim-ts-autotag")
