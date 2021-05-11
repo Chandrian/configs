@@ -59,8 +59,8 @@ return require("packer").startup(
 
         -- Autocomplete
         use {"hrsh7th/nvim-compe", config = 'require("plugin_settings.compe")'}
-        use {"hrsh7th/vim-vsnip", opt = true}
-        use {"rafamadriz/friendly-snippets", opt = true}
+        use {"hrsh7th/vim-vsnip"}
+        use {"rafamadriz/friendly-snippets"}
 
         -- Treesitter
     use {
@@ -128,7 +128,6 @@ return require("packer").startup(
         require_plugin("lspsaga.nvim")
         require_plugin("nvim-lspinstall")
         require_plugin("nvim-dap")
-        require_plugin("vim-vsnip")
         require_plugin("nvim-ts-autotag")
         require_plugin("dashboard-nvim")
         require_plugin("nvim-bqf")
