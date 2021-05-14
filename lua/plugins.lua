@@ -34,13 +34,18 @@ return require("packer").startup(
     function(use)
         -- Packer can manage itself as an optional plugin
         use "wbthomason/packer.nvim"
-    -- brackets maps
-    use 'tpope/vim-unimpaired'
-
-        -- TODO refactor all of this (for now it works, but yes I know it could be wrapped in a simpler function)
-        use {"neovim/nvim-lspconfig", opt = true}
-        use {"glepnir/lspsaga.nvim", opt = true}
-        use {"kabouzeid/nvim-lspinstall", opt = true}
+    use { --lsp
+            {
+                'neovim/nvim-lspconfig',
+                config = 'require("lsp.config")'
+            },{
+                "kabouzeid/nvim-lspinstall",
+                config = 'require("lsp.install")'
+            },{
+                'glepnir/lspsaga.nvim',
+                config = 'require("lsp.saga")'
+            }
+        }
 
         -- Telescope
         use {"nvim-lua/popup.nvim"}
@@ -48,6 +53,9 @@ return require("packer").startup(
         'nvim-lua/plenary.nvim',
         config = 'require("plugin_settings.plenary")',
     }
+    -- brackets maps
+    use 'tpope/vim-unimpaired'
+
     use { -- telescope
         'nvim-telescope/telescope.nvim',
         requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}},
@@ -124,9 +132,6 @@ return require("packer").startup(
             config = 'require("plugin_settings.whichkey")',
         }}
     }
-        require_plugin("nvim-lspconfig")
-        require_plugin("lspsaga.nvim")
-        require_plugin("nvim-lspinstall")
         require_plugin("nvim-dap")
         require_plugin("nvim-ts-autotag")
         require_plugin("dashboard-nvim")
