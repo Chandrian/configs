@@ -39,8 +39,7 @@ return require("packer").startup(
                 'neovim/nvim-lspconfig',
                 config = 'require("lsp.config")'
             },{
-                "kabouzeid/nvim-lspinstall",
-                config = 'require("lsp.install")'
+                "kabouzeid/nvim-lspinstall"
             },{
                 'glepnir/lspsaga.nvim',
                 config = 'require("lsp.saga")'

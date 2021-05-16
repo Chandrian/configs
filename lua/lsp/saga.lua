@@ -55,6 +55,11 @@ local on_attach = function(client, bufnr)
     -- saga mappings
     -- lsp provider to find the cursor word definition and reference
     buf_set_keymap('n', 'gh', "<Cmd>lua require('lspsaga.provider').lsp_finder()<CR>", opts)
+    -- code actian
+    buf_set_keymap('n', '<leader>ca', "<cmd>lua require('lspsaga.codeaction').code_action()<CR>", opts)
+    buf_set_keymap('v', '<leader>ca', ":<C-U>lua require('lspsaga.codeaction').range_code_action()<CR>", opts)
+    -- rename
+    buf_set_keymap('n', 'gr', ":<C-U>lua require('lspsaga.codeaction').range_code_action()<CR>", opts)
     -- show hover doc
     buf_set_keymap('n', 'K', "<Cmd>lua require('lspsaga.hover').render_hover_doc()<CR>", opts)
     -- scroll down hover doc or scroll in definition preview
@@ -67,6 +72,8 @@ local on_attach = function(client, bufnr)
     buf_set_keymap('n', 'gp', "<Cmd>lua require'lspsaga.provider'.preview_definition()<CR>", opts)
     buf_set_keymap('n', 'gd', "<Cmd>lua vim.lsp.buf.definition()<CR>", opts)
     buf_set_keymap('n', 'gD', "<Cmd>lua vim.lsp.buf.declaration()<CR>", opts)
+    -- show
+    buf_set_keymap('n', '<leader>cd', "<cmd>lua require'lspsaga.diagnostic'.show_line_diagnostics()<CR>", opts)
     -- jump diagnostic
     buf_set_keymap('n', '[g', "<Cmd>lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_prev()<CR>", opts)
     buf_set_keymap('n', ']g', "<Cmd>lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_next()<CR>", opts)
@@ -127,8 +134,6 @@ for lsp, setup in pairs(servers) do
     nvim_lsp[lsp].setup(setup)
 end
 
-local saga = require('lspsaga')
-saga.init_lsp_saga()
 vim.api.nvim_set_keymap('n', '<A-d>', '<Cmd>lua require("lspsaga.floaterm").open_float_terminal()<CR>', opts)
 vim.api.nvim_set_keymap('t', '<A-d>', [[<C-\><C-n>:lua require("lspsaga.floaterm").close_float_terminal()<CR>]], opts)
 
