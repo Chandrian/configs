@@ -112,6 +112,7 @@ return require("packer").startup(
         use {"ChristianChiarulli/dashboard-nvim", opt = true}
         use {"windwp/nvim-autopairs", config = 'require("plugin_settings.autopairs")'}
 
+        use "devanlooches/better-comments-nvim"
         use "terrortylor/nvim-comment"
         require('nvim_comment').setup()
 
