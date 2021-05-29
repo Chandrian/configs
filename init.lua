@@ -6,5 +6,4 @@ require('commands')
 
 require('lv-autocommands')
 require('keymappings')
-require('colorscheme')
 require('lv-dashboard')
