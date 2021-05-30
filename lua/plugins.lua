@@ -34,6 +34,7 @@ return require("packer").startup(
     function(use)
         -- Packer can manage itself as an optional plugin
         use "wbthomason/packer.nvim"
+
     use { --lsp
             {
                 'neovim/nvim-lspconfig',
@@ -119,7 +120,7 @@ return require("packer").startup(
         use {"kevinhwang91/nvim-bqf", opt = true}
 
         -- Color
-        use {"christianchiarulli/nvcode-color-schemes.vim", opt = true}
+        use "rafamadriz/neon"
 
         -- Status Line and Bufferline
         use {"glepnir/galaxyline.nvim", config = 'require("plugin_settings.galaxyline")'}

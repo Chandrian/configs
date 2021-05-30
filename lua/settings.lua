@@ -72,5 +72,8 @@ vim.cmd('set formatoptions-=cro') -- Don't insert comments
 vim.cmd('set iskeyword+=-') -- treat dash separated words as a word text object"
 vim.cmd('set shortmess+=c') -- Don't pass messages to |ins-completion-menu|.
 vim.cmd('set whichwrap+=<,>,[,],h,l') -- move to next line with theses keys
-vim.cmd('let g:nvcode_termcolors=256')
-vim.cmd('colorscheme lunar')
+vim.g.neon_style = "dark"
+vim.g.neon_italic_keyword = true
+vim.g.neon_italic_function = true
+
+vim.cmd[[colorscheme neon]]
