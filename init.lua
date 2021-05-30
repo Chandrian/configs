@@ -5,5 +5,4 @@ require('autocmds')
 require('commands')
 
 require('lv-autocommands')
-require('keymappings')
 require('lv-dashboard')

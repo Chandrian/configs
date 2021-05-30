@@ -1,3 +1,6 @@
+-- no hl
+vim.api.nvim_set_keymap('n', '<Leader>h', ':set hlsearch!<CR>', {noremap = true, silent = true})
+
 local function set_keymap(mode, opts, keymaps)
     for _, keymap in ipairs(keymaps) do
         vim.api.nvim_set_keymap(mode, keymap[1], keymap[2], opts)
@@ -50,6 +53,10 @@ set_keymap('x', {noremap=true, silent=true}, {
     {'K', ':move \'<-2<CR>gv-gv'},
     {'J', ':move \'>+1<CR>gv-gv'},
 })
+
+-- Better nav for omnicomplete
+vim.cmd('inoremap <expr> <c-j> (\"\\<C-n>\")')
+vim.cmd('inoremap <expr> <c-k> (\"\\<C-p>\")')
 
 -- insert
 set_keymap('i', {noremap=true, silent=true}, {
