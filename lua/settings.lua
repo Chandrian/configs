@@ -16,9 +16,6 @@ local function set_options(options)
     end
 end
 
-vim.cmd('filetype plugin on')
-vim.cmd('syntax enable')
-
 enable_options({
     -- 'spell',
     'expandtab',
@@ -65,6 +62,12 @@ set_options({
     {'clipboard', 'unnamedplus'}, -- Copy paste between vim and everything elsewhere
 })
 TERMINAL = vim.fn.expand('$TERMINAL')
+
+vim.cmd('filetype plugin on')
+vim.cmd('syntax enable')
+-- netrw configs
+vim.cmd('let netrw_liststyle=3')
+
 vim.cmd('let &titleold="'..TERMINAL..'"')
 vim.o.titlestring="%<%F%=%l/%L - nvim"
 vim.cmd('syntax on') -- syntax highlighting
@@ -72,7 +75,7 @@ vim.cmd('set formatoptions-=cro') -- Don't insert comments
 vim.cmd('set iskeyword+=-') -- treat dash separated words as a word text object"
 vim.cmd('set shortmess+=c') -- Don't pass messages to |ins-completion-menu|.
 vim.cmd('set whichwrap+=<,>,[,],h,l') -- move to next line with theses keys
-vim.g.neon_style = "dark"
+vim.g.neon_style = "default"
 vim.g.neon_italic_keyword = true
 vim.g.neon_italic_function = true
 
