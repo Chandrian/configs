@@ -107,26 +107,29 @@ return require("packer").startup(
             config = 'require("plugin_settings.gitlinker")',
         },
     }
-    use {'lukas-reineke/indent-blankline.nvim',
-            branch = 'lua'
-        }
-        use {"ChristianChiarulli/dashboard-nvim", opt = true}
-        use {"windwp/nvim-autopairs", config = 'require("plugin_settings.autopairs")'}
+    use {'lukas-reineke/indent-blankline.nvim'}
+    use {"ChristianChiarulli/dashboard-nvim", opt = true}
+    use {"windwp/nvim-autopairs", config = 'require("plugin_settings.autopairs")'}
 
-        use "devanlooches/better-comments-nvim"
-        use "terrortylor/nvim-comment"
-        require('nvim_comment').setup()
+    use "devanlooches/better-comments-nvim"
+    use {"terrortylor/nvim-comment", config = "require('nvim_comment').setup()"}
 
-        use {"kevinhwang91/nvim-bqf", opt = true}
+    use {"kevinhwang91/nvim-bqf", opt = true}
 
-        -- Color
-        use "rafamadriz/neon"
+    -- Color
+    use "rafamadriz/neon"
 
-        -- Status Line and Bufferline
-        use {"glepnir/galaxyline.nvim", config = 'require("plugin_settings.galaxyline")'}
-        use {'akinsho/nvim-bufferline.lua', requires = 'kyazdani42/nvim-web-devicons', config = 'require("plugin_settings.bufferline")'}
+    -- Status Line and Bufferline
+    use {"glepnir/galaxyline.nvim", config = 'require("plugin_settings.galaxyline")'}
+    use {'akinsho/nvim-bufferline.lua', requires = 'kyazdani42/nvim-web-devicons', config = 'require("plugin_settings.bufferline")'}
 
- use {
+    use {'andweeb/presence.nvim', config = 'require("plugin_settings.presence")'}
+
+    use {'euclio/vim-markdown-composer', run = 'cargo build --release'}
+
+    use {'norcalli/nvim-colorizer.lua', config = "require'colorizer'.setup()"}
+
+    use {
     'AckslD/nvim-whichkey-setup.lua',
         requires = {{
             'liuchengxu/vim-which-key',

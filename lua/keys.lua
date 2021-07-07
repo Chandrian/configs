@@ -34,8 +34,8 @@ set_keymap('n', {noremap=true, silent=true}, {
     {'<Down>', ':resize -2<CR>'},
     {'<Left>', ':vertical resize +2<CR>'},
     {'<Right>', ':vertical resize -2<CR>'},
-})
 
+})
 -- visual
 set_keymap('x', {noremap=true, silent=true}, {
     -- Allow pasting same thing many times
