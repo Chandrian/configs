@@ -12,7 +12,7 @@ require('telescope').setup {
         },
         selection_strategy = "reset",
         file_ignore_patterns = {},
-        shorten_path = true,
+        path_display = true,
         prompt_prefix = " ",
         selection_caret = " ",
         set_env = {['COLORTERM'] = 'truecolor'}, -- default = nil,
