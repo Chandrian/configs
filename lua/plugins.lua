@@ -131,6 +131,8 @@ return require("packer").startup(
 
     use {'dhruvasagar/vim-table-mode'}
 
+    use {'liuchengxu/vista.vim', config = 'require("plugin_settings.vista")'}
+
     use {
     'AckslD/nvim-whichkey-setup.lua',
         requires = {{
