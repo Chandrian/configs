@@ -129,6 +129,8 @@ return require("packer").startup(
 
     use {'norcalli/nvim-colorizer.lua', config = "require'colorizer'.setup()"}
 
+    use {'dhruvasagar/vim-table-mode'}
+
     use {
     'AckslD/nvim-whichkey-setup.lua',
         requires = {{
