@@ -9,38 +9,38 @@ Presence = require("presence"):setup({
 	-- Not in a git repository, so do some custom parsing
 	if not git_project_name then
 	-- Parse buffer for your project name
-	project_name = get_project_name(buffer)
+	project_name = Get_project_name(buffer)
     else
         project_name = git_project_name
     end
 	if project_name == nil or project_name == "" then
 	return ""
 	end
-	if trim(project_name) == "nvim" then
+	if Trim(project_name) == "nvim" then
 	project_name = "Neovim Config Files"
 	end
-	if trim(project_name) == "alacritty" then
+	if Trim(project_name) == "alacritty" then
 	project_name = "Alacritty Config Files"
 	end
 	-- You can hide any directories you want by just adding them and making them return nil just like the one below
-	if trim(project_name) == "accounts" then
+	if Trim(project_name) == "accounts" then
         return nil
 	end
-	if trim(project_name) == ".gnupg" then
+	if Trim(project_name) == ".gnupg" then
         return nil
 	end
-    if trim(project_name) == "rustfetch" then
+    if Trim(project_name) == "rustfetch" then
         return nil
     end
-	return string.format("Working on %s", project_name)
+	return string.format("Working on %s", tostring(project_name))
 	end,
 	})
 	-- Function to trim directory names (remove spaces)
-	function trim(str)
+	function Trim(str)
 	return str:gsub("%s+", "")
 	end
 	-- custom function to parse the path and get the workspace name
-	function get_project_name(buffer)
+	function Get_project_name(buffer)
 	-- get file extension
 	local file_extension = buffer:match("^.+%.(.+)$")
 	-- Remove the file name from the end of the file
