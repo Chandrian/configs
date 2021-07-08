@@ -67,6 +67,10 @@ vim.cmd('filetype plugin on')
 vim.cmd('syntax enable')
 -- netrw configs
 vim.cmd('let netrw_liststyle=3')
+vim.cmd('let g:netrw_banner = 0')
+vim.cmd('let g:netrw_browse_split = 3')
+vim.cmd('let g:netrw_winsize = 25')
+
 
 vim.cmd('let &titleold="'..TERMINAL..'"')
 vim.o.titlestring="%<%F%=%l/%L - nvim"
