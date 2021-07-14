@@ -24,7 +24,7 @@ end
 local auto_formatters = {}
 
 local auto_formatter = {'BufWritePre', '*', 'lua vim.lsp.buf.formatting_sync(nil, 1000)'}
-table.insert(auto_formatters, auto_formater)
+table.insert(auto_formatters, auto_formatter)
 
 define_augroups({
     _general_settings = {
