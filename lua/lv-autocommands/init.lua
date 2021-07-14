@@ -21,21 +21,10 @@ local function define_augroups(definitions)
     end
 end
 
-local auto_formatters = {            }
+local auto_formatters = {}
 
-local python_autoformat = {'BufWritePre', '*.py', 'lua vim.lsp.buf.formatting_sync(nil, 1000)'}
-table.insert(auto_formatters, python_autoformat)
-
-local javascript_autoformat = {'BufWritePre', '*.js', 'lua vim.lsp.buf.formatting_sync(nil, 1000)'}
-local javascriptreact_autoformat = {'BufWritePre', '*.jsx', 'lua vim.lsp.buf.formatting_sync(nil, 1000)'}
-    table.insert(auto_formatters, javascript_autoformat)
-    table.insert(auto_formatters, javascriptreact_autoformat)
-
-local lua_format = {'BufWritePre', '*.lua', 'lua vim.lsp.buf.formatting_sync(nil, 1000)'}
-table.insert(auto_formatters, lua_format)
-
-local json_format = {'BufWritePre', '*.json', 'lua vim.lsp.buf.formatting_sync(nil, 1000)'}
-table.insert(auto_formatters, json_format)
+local auto_formatter = {'BufWritePre', '*', 'lua vim.lsp.buf.formatting_sync(nil, 1000)'}
+table.insert(auto_formatters, auto_formater)
 
 define_augroups({
     _general_settings = {
