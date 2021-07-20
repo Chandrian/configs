@@ -13,8 +13,8 @@ Presence = require("presence"):setup({
     else
         project_name = git_project_name
     end
-	if project_name == nil or project_name == "" then
-	return ""
+	if project_name == "" then
+	return nil
 	end
 	if Trim(project_name) == "nvim" then
 	project_name = "Neovim Config Files"
@@ -32,9 +32,6 @@ Presence = require("presence"):setup({
 	if Trim(project_name) == ".gnupg" then
         return nil
 	end
-    if Trim(project_name) == "rustfetch" then
-        return nil
-    end
 	return string.format("Working on %s", tostring(project_name))
 	end,
 	})
@@ -58,5 +55,6 @@ Presence = require("presence"):setup({
 	dir_name = string.gsub(path, "^/.*/","")
 	end
 	return dir_name
-	end
-
+end
+print('Discord presence is turned off by default. You can update it by pressing <leader>du')
+vim.api.nvim_set_keymap('n','<leader>du' ,':lua package.loaded.presence:update()<CR>', {})

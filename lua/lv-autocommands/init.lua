@@ -21,21 +21,10 @@ local function define_augroups(definitions)
     end
 end
 
-local auto_formatters = {            }
+local auto_formatters = {}
 
-local python_autoformat = {'BufWritePre', '*.py', 'lua vim.lsp.buf.formatting_sync(nil, 1000)'}
-table.insert(auto_formatters, python_autoformat)
-
-local javascript_autoformat = {'BufWritePre', '*.js', 'lua vim.lsp.buf.formatting_sync(nil, 1000)'}
-local javascriptreact_autoformat = {'BufWritePre', '*.jsx', 'lua vim.lsp.buf.formatting_sync(nil, 1000)'}
-    table.insert(auto_formatters, javascript_autoformat)
-    table.insert(auto_formatters, javascriptreact_autoformat)
-
-local lua_format = {'BufWritePre', '*.lua', 'lua vim.lsp.buf.formatting_sync(nil, 1000)'}
-table.insert(auto_formatters, lua_format)
-
-local json_format = {'BufWritePre', '*.json', 'lua vim.lsp.buf.formatting_sync(nil, 1000)'}
-table.insert(auto_formatters, json_format)
+local auto_formatter = {'BufWritePre', '*', 'lua vim.lsp.buf.formatting_sync(nil, 1000)'}
+table.insert(auto_formatters, auto_formatter)
 
 define_augroups({
     _general_settings = {
@@ -45,8 +34,6 @@ define_augroups({
         {'BufNewFile', '*', 'setlocal formatoptions-=c formatoptions-=r formatoptions-=o'},
         {'VimLeavePre', '*', 'set title set titleold='}
 
-        -- {'User', 'GoyoLeave', 'lua require(\'galaxyline\').disable_galaxyline()'},
-        -- {'User', 'GoyoEnter', 'lua require(\'galaxyline\').galaxyline_augroup()'},
     },
     _java = {
         {'FileType', 'java', 'luafile ~/.config/nvim/lua/lsp/java-ls.lua'},
