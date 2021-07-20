@@ -242,30 +242,14 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: vim-fugitive
-time([[Config for vim-fugitive]], true)
-require("plugin_settings.fugitive")
-time([[Config for vim-fugitive]], false)
--- Config for: nvim-bufferline.lua
-time([[Config for nvim-bufferline.lua]], true)
-require("plugin_settings.bufferline")
-time([[Config for nvim-bufferline.lua]], false)
--- Config for: nvim-comment
-time([[Config for nvim-comment]], true)
-require('nvim_comment').setup()
-time([[Config for nvim-comment]], false)
--- Config for: nvim-compe
-time([[Config for nvim-compe]], true)
-require("plugin_settings.compe")
-time([[Config for nvim-compe]], false)
--- Config for: nvim-treesitter
-time([[Config for nvim-treesitter]], true)
-require("plugin_settings.treesitter")
-time([[Config for nvim-treesitter]], false)
 -- Config for: nvim-lspconfig
 time([[Config for nvim-lspconfig]], true)
 require("lsp.config")
 time([[Config for nvim-lspconfig]], false)
+-- Config for: vim-which-key
+time([[Config for vim-which-key]], true)
+require("plugin_settings.whichkey")
+time([[Config for vim-which-key]], false)
 -- Config for: nvim-tree.lua
 time([[Config for nvim-tree.lua]], true)
 require("plugin_settings.tree")
@@ -278,34 +262,18 @@ time([[Config for galaxyline.nvim]], false)
 time([[Config for git-blame.nvim]], true)
 require("plugin_settings.gitblame")
 time([[Config for git-blame.nvim]], false)
--- Config for: gitlinker.nvim
-time([[Config for gitlinker.nvim]], true)
-require("plugin_settings.gitlinker")
-time([[Config for gitlinker.nvim]], false)
+-- Config for: nvim-treesitter
+time([[Config for nvim-treesitter]], true)
+require("plugin_settings.treesitter")
+time([[Config for nvim-treesitter]], false)
 -- Config for: gitsigns.nvim
 time([[Config for gitsigns.nvim]], true)
 require("plugin_settings.gitsigns")
 time([[Config for gitsigns.nvim]], false)
--- Config for: nvim-colorizer.lua
-time([[Config for nvim-colorizer.lua]], true)
-require'colorizer'.setup()
-time([[Config for nvim-colorizer.lua]], false)
 -- Config for: plenary.nvim
 time([[Config for plenary.nvim]], true)
 require("plugin_settings.plenary")
 time([[Config for plenary.nvim]], false)
--- Config for: lspsaga.nvim
-time([[Config for lspsaga.nvim]], true)
-require("lsp.saga")
-time([[Config for lspsaga.nvim]], false)
--- Config for: telescope.nvim
-time([[Config for telescope.nvim]], true)
-require("plugin_settings.telescope")
-time([[Config for telescope.nvim]], false)
--- Config for: vim-which-key
-time([[Config for vim-which-key]], true)
-require("plugin_settings.whichkey")
-time([[Config for vim-which-key]], false)
 -- Config for: nvim-autopairs
 time([[Config for nvim-autopairs]], true)
 require("plugin_settings.autopairs")
@@ -314,6 +282,38 @@ time([[Config for nvim-autopairs]], false)
 time([[Config for presence.nvim]], true)
 require("plugin_settings.presence")
 time([[Config for presence.nvim]], false)
+-- Config for: telescope.nvim
+time([[Config for telescope.nvim]], true)
+require("plugin_settings.telescope")
+time([[Config for telescope.nvim]], false)
+-- Config for: nvim-bufferline.lua
+time([[Config for nvim-bufferline.lua]], true)
+require("plugin_settings.bufferline")
+time([[Config for nvim-bufferline.lua]], false)
+-- Config for: vim-fugitive
+time([[Config for vim-fugitive]], true)
+require("plugin_settings.fugitive")
+time([[Config for vim-fugitive]], false)
+-- Config for: nvim-colorizer.lua
+time([[Config for nvim-colorizer.lua]], true)
+require'colorizer'.setup()
+time([[Config for nvim-colorizer.lua]], false)
+-- Config for: nvim-comment
+time([[Config for nvim-comment]], true)
+require('nvim_comment').setup()
+time([[Config for nvim-comment]], false)
+-- Config for: nvim-compe
+time([[Config for nvim-compe]], true)
+require("plugin_settings.compe")
+time([[Config for nvim-compe]], false)
+-- Config for: gitlinker.nvim
+time([[Config for gitlinker.nvim]], true)
+require("plugin_settings.gitlinker")
+time([[Config for gitlinker.nvim]], false)
+-- Config for: lspsaga.nvim
+time([[Config for lspsaga.nvim]], true)
+require("lsp.saga")
+time([[Config for lspsaga.nvim]], false)
 if should_profile then save_profiles() end
 
 end)

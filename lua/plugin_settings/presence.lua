@@ -1,6 +1,6 @@
 Presence = require("presence"):setup({
 	-- This config table shows all available config options with their default values
-	auto_update       = true,
+	auto_update       = false,
 	editing_text      = "Editing %s",
 	neovim_image_text = "The One True Text Editor",
 	main_image        = "neovim",
@@ -18,6 +18,9 @@ Presence = require("presence"):setup({
 	end
 	if Trim(project_name) == "nvim" then
 	project_name = "Neovim Config Files"
+	end
+	if Trim(project_name) == "AWSOM" then
+            return nil
 	end
 	if Trim(project_name) == "alacritty" then
 	project_name = "Alacritty Config Files"
